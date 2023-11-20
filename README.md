@@ -124,8 +124,7 @@ This repo also have a ```main.py``` file that returns the data so you can make t
 
 Remember each base filter's value needs to be an empty string `""` for the filter to take place.
 
-```python
-
+```bash
 # SIGNALS
 TOP_GAINERS                # highest % price gain today
 TOP_LOSERS                 # highest % price loss today
@@ -209,7 +208,6 @@ With the only exceptions being the `EARNINGS_DATE` filter being a date from-to f
 And the `PERFORMANCE` filters which can only take one low or high attributes meaning one or the other has to be an empty string
 
 ```bash
-
 # PERCENTAGE VALUES
 
 PRICE_FREE_CASH_FLOW

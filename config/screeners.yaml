@@ -1,0 +1,31 @@
+- name: today_up
+  filters:
+    MARKET_CAP:
+      low: 10
+      high: ""
+    OPTIONABLE: ""
+    PRICE:
+      low: 30
+      high: ""
+    RELATIVE_VOLUME:
+      low: 1
+      high: ""
+    CHANGE:
+      low: 3
+      high: ""
+
+- name: today_down
+  filters:
+    MARKET_CAP:
+      low: 10
+      high: ""
+    OPTIONABLE: ""
+    PRICE:
+      low: 30
+      high: ""
+    RELATIVE_VOLUME:
+      low: 1
+      high: ""
+    CHANGE:
+      low: ""
+      high: -3
