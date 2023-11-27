@@ -10,18 +10,22 @@ class Screener(BaseModel):
     def encode(self) -> str:
         encoded_filters = []
         for key, value in self.filters.items():
-            if "x" in FilterCodes[key].value:
+            code = FilterCodes[key].value
+            if code == "earningsdate_x":
                 low = value["low"]
                 high = value["high"]
-                filt = FilterCodes[key].value.replace("x", f"{low}x{high}")
+                filt = code.replace("x", f"{low}x{high}")
                 encoded_filters.append(filt)
-            elif "to" in FilterCodes[key].value:
+            elif code == "ta_topgainers" or code == "ta_toplosers":
+                filt = code + str(value)
+                encoded_filters.append(filt)
+            elif "to" in code:
                 low = value["low"]
                 high = value["high"]
-                filt = FilterCodes[key].value.replace("to", f"{low}to{high}")
+                filt = code.replace("to", f"{low}to{high}")
                 encoded_filters.append(filt)
             else:
-                filt = FilterCodes[key].value + str(value)
+                filt = code + str(value)
                 encoded_filters.append(filt)
         return ",".join(encoded_filters)
 
